@@ -8,6 +8,7 @@ namespace iYon_ERP.Models
 {
     public class Employee
     {
+        private int Id { get; set; }
         private string Name { get; set; }
         private DateTime HireDate { get; set; }
         private DateTime OperationalDate { get; set; }

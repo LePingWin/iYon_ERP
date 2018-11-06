@@ -8,11 +8,15 @@ namespace iYon_ERP.Models
 {
      public class Project
     {
+        private int Id { get; set; }
         private string Name { get; set; }
         private DateTime StartDate { get; set; }
         private DateTime LimiteDate { get; set; }
-        private int DevCharge { get; set; }
-        private int ProjectManagementCharge { get; set; }
-        private float Efficience { get; set; }
+        private int DevWorkLoad { get; set; }
+        private int ProjectManagementWorkLoad { get; set; }
+
+        private Dictionary<Employee,int> EmployeeWorkloadDictionnary { get; set; }
+
+        
     }
 }
