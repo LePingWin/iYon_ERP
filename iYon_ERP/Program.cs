@@ -10,6 +10,7 @@ namespace iYon_ERP
     {
         static void Main(string[] args)
         {
+            Console.Write("bla");
         }
     }
 }
