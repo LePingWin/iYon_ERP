@@ -1,26 +1,26 @@
 //JSON Project
 {
    [
-       {
-        "Id" : "1",
-        "Name" : "Airbus",
-        "Deadline" : "2018-12-01T18:00:00.000Z",
-        "DevWorkLoad" : "150",
-        "ProjectManagementWorkLoad" : "40"
-       },
+    {
+      "Id": "1",
+      "Name": "Airbus",
+      "Deadline": "2018-12-01T18:00:00.000Z",
+      "DevWorkLoadInDays": "150",
+      "ProjectManagementWorkLoadInDays": "40"
+    },
        {
         "Id" : "2",
         "Name" : "NINETENDO",
         "Deadline" : "2018-09-01T18:00:00.000Z",
-        "DevWorkLoad" : "75",
-        "ProjectManagementWorkLoad" : "25"
+        "DevWorkLoadInDays" : "75",
+        "ProjectManagementWorkLoadInDays" : "25"
        },
        {
         "Id" : "3",
         "Name" : "HTC VR",
         "Deadline" : "2019-01-01T18:00:00.000Z",
-        "DevWorkLoad" : "150",
-        "ProjectManagementWorkLoad" : "45"
+        "DevWorkLoadInDays" : "150",
+        "ProjectManagementWorkLoadInDays" : "45"
        }
    ]
 }

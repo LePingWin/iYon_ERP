@@ -14,10 +14,11 @@ namespace iYon_ERP.Repositories
     {
 
         private List<Employee> listEmployees { get; set; }
-        private string fileUrl = ConfigurationManager.AppSettings["fileUrl"];
+        private string fileUrl = string.Format(@"{0}\{1}",AppConfig.SimulationFilesPath,"Employees.json");
+
         public List<Employee> GetAllItems()
         {
-            using (StreamReader file = File.OpenText(@"c:\movie.json"))
+            using (StreamReader file = File.OpenText(fileUrl))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 listEmployees = (List<Employee>)serializer.Deserialize(file, typeof(Employee));

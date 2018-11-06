@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace iYon_ERP.Models
 {
-    public class AppConfig
+    public static class AppConfig
     {
-        private int Efficience { get; set; } = int.Parse(ConfigurationManager.AppSettings["Efficience"]);
-        private TimeSpan DaysBeforeEmployeeOperational { get; set; } = new TimeSpan(int.Parse(ConfigurationManager.AppSettings["DaysBeforeEmployeeOperational"]));
-        private DateTime StartSimulationDate { get; set; } = DateTime.Parse(ConfigurationManager.AppSettings["StartSimulationDate"]);
-        private string SimulationFilesPath { get; set; } = ConfigurationManager.AppSettings["SimulationFilesPath"];
+        public static int Efficience { get; } = int.Parse(ConfigurationManager.AppSettings["Efficience"]);
+        public static TimeSpan DaysBeforeEmployeeOperational { get; } = new TimeSpan(int.Parse(ConfigurationManager.AppSettings["DaysBeforeEmployeeOperational"]));
+        public static DateTime StartSimulationDate { get; } = DateTime.Parse(ConfigurationManager.AppSettings["StartSimulationDate"]);
+        public static string SimulationFilesPath { get; } = ConfigurationManager.AppSettings["SimulationFilesPath"];
     }
 }

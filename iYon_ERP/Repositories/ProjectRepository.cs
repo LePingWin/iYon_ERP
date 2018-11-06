@@ -13,10 +13,10 @@ namespace iYon_ERP.Repositories
     public class ProjectRepository
     {
         private List<Project> listProjects { get; set; }
-        private string fileUrl = ConfigurationManager.AppSettings["projectsFileUrl"];
+        private string fileUrl = string.Format(@"{0}\{1}", AppConfig.SimulationFilesPath, "Projects.json");
         public List<Project> GetAllItems()
         {
-            using (StreamReader file = File.OpenText(@"c:\movie.json"))
+            using (StreamReader file = File.OpenText(fileUrl)
             {
                 JsonSerializer serializer = new JsonSerializer();
                 listProjects = (List<Project>)serializer.Deserialize(file, typeof(Project));
