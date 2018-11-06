@@ -10,8 +10,10 @@ namespace iYon_ERP.Services
 {
     public class EmployeService
     {
+        private static EmployeRepository EmployeeRepo = new EmployeRepository();
+        public List<Employee> Employees { get { return EmployeeRepo.GetAllItems(); } }
 
-        public List<Employee> Employees { get; } = new EmployeRepository().GetAllItems();
+
         //AddEmployee
         //call employee repo
     }

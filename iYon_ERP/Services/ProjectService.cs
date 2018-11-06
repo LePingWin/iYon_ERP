@@ -10,6 +10,7 @@ namespace iYon_ERP.Services
 {
     public class ProjectService
     {
-        public List<Project> Projects { get; } = new ProjectRepository().GetAllItems();
+        private static ProjectRepository ProjectRepo = new ProjectRepository();
+        public List<Project> Projects { get { return ProjectRepo.GetAllItems(); } }
     }
 }
