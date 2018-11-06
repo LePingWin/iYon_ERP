@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iYon_ERP.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,9 @@ namespace iYon_ERP
     {
         static void Main(string[] args)
         {
-            Console.Write("bla");
+            new EmployeService().Employees.ForEach(x => Console.WriteLine(x.Name));
+            new ProjectService().Projects.ForEach(x => Console.WriteLine(x.Name));
+            Console.ReadLine();
         }
     }
 }

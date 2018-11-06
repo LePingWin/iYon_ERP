@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,18 @@ namespace iYon_ERP.Models
 {
     public class Employee
     {
-        private int Id { get; set; }
-        private string Name { get; set; }
-        private DateTime HireDate { get; set; }
-        private DateTime OperationalDate { get; set; }
-        private Type Role { get; set; }
+        [JsonProperty("Id")]
+        public int Id { get; private set; }
+        [JsonProperty("Name")]
+        public string Name { get; private set; }
+        [JsonProperty("HireDate")]
+        public DateTime HireDate { get; private set; }
+        public DateTime OperationalDate
+        {
+            get { return HireDate.Add(AppConfig.DaysBeforeEmployeeOperational); }
+        }
+        [JsonProperty("Role")]
+        public Type Role { get; private set; }
     }
 
     public enum Type

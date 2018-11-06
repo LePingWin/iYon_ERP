@@ -1,29 +1,27 @@
 //JSON Employe
-{
-   [
+[
        {
         "Id" : "1",
         "Name" : "Laurent Freyss",
         "HireDate" : "2018-01-01T18:00:00.000Z",
-        "Role" : "Dev"
+        "Role" : "Developer"
        },
-       {
-        "Id" : "2",
-        "Name" : "Jean Still",
-        "HireDate" : "2018-01-01T18:00:00.000Z",
-        "Role" : "Dev"
-       },
-       {
-        "Id" : "3",
-        "Name" : "Julien Groll",
-        "HireDate" : "2018-01-01T18:00:00.000Z",
-        "Role" : "Dev"
-       },
+        {
+          "Id": "2",
+          "Name": "Jean Still",
+          "HireDate": "2018-01-01T18:00:00.000Z",
+          "Role": "Developer"
+        },
+        {
+          "Id": "3",
+          "Name": "Julien Groll",
+          "HireDate": "2018-01-01T18:00:00.000Z",
+          "Role": "Developer"
+        },
        {
         "Id" : "4",
         "Name" : "Loic Bine",
         "HireDate" : "2018-01-01T18:00:00.000Z",
-        "Role" : "ProjectManagement"
+        "Role" : "ProjectManager"
        }
-   ]
-}
+ ]

@@ -16,12 +16,7 @@ namespace iYon_ERP.Repositories
         private string fileUrl = string.Format(@"{0}\{1}", AppConfig.SimulationFilesPath, "Projects.json");
         public List<Project> GetAllItems()
         {
-            using (StreamReader file = File.OpenText(fileUrl)
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                listProjects = (List<Project>)serializer.Deserialize(file, typeof(Project));
-            }
-            return listProjects;
+            return JsonConvert.DeserializeObject<List<Project>>(File.ReadAllText(fileUrl));
         }
     }
 }

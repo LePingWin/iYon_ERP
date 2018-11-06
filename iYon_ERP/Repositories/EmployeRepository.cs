@@ -18,12 +18,7 @@ namespace iYon_ERP.Repositories
 
         public List<Employee> GetAllItems()
         {
-            using (StreamReader file = File.OpenText(fileUrl))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                listEmployees = (List<Employee>)serializer.Deserialize(file, typeof(Employee));
-            }
-            return listEmployees;
+            return JsonConvert.DeserializeObject<List<Employee>>(File.ReadAllText(fileUrl));
         }
     }
 }
