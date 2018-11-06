@@ -12,5 +12,6 @@ namespace iYon_ERP.Models
         private DateTime OperationalDelai { get; set; }
         private DateTime StartSimulationDate { get; set; }
         private bool IsAlerteActivate { get; set; }
+        private string SimulationFilesPath { get; set; }
     }
 }
