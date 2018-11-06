@@ -12,7 +12,6 @@ namespace iYon_ERP.Models
         private string Name { get; set; }
         private DateTime HireDate { get; set; }
         private DateTime OperationalDate { get; set; }
-        private int DevCharge { get; set; }
         private Type Role { get; set; }
     }
 

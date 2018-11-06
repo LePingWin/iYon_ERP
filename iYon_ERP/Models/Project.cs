@@ -10,13 +10,9 @@ namespace iYon_ERP.Models
     {
         private int Id { get; set; }
         private string Name { get; set; }
-        private DateTime StartDate { get; set; }
-        private DateTime LimiteDate { get; set; }
-        private int DevWorkLoad { get; set; }
-        private int ProjectManagementWorkLoad { get; set; }
-
+        private DateTime Deadline { get; set; }
+        private int DevWorkLoadInDays { get; set; }
+        private int ProjectManagementWorkLoadInDevs { get; set; }
         private Dictionary<Employee,int> EmployeeWorkloadDictionnary { get; set; }
-
-        
     }
 }

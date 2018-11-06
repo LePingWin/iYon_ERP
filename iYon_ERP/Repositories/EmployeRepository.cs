@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,14 +12,17 @@ namespace iYon_ERP.Repositories
 {
     public class EmployeRepository
     {
-        public Employee GetAllItems()
+
+        private List<Employee> listEmployees { get; set; }
+        private string fileUrl = ConfigurationManager.AppSettings["fileUrl"];
+        public List<Employee> GetAllItems()
         {
             using (StreamReader file = File.OpenText(@"c:\movie.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                Employee employe = (Employee)serializer.Deserialize(file, typeof(Employee));
+                listEmployees = (List<Employee>)serializer.Deserialize(file, typeof(Employee));
             }
-
+            return listEmployees;
         }
     }
 }
