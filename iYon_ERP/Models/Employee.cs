@@ -17,7 +17,7 @@ namespace iYon_ERP.Models
 
     public enum Type
     {
-        Dev,
-        ProjectManagement
+        Developer,
+        ProjectManager
     }
 }
