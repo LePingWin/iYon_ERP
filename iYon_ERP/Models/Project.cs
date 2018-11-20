@@ -38,5 +38,10 @@ namespace iYon_ERP.Models
             return workLoadtype == Models.Type.Developer ? DevWorkLoadInDays : ProjectManagementWorkLoadInDays;
         }
 
+
+        public override string ToString()
+        {
+            return "Name: " + Name + "| Deadline:" + Deadline + "| TotalWorkLoad: " + (DevWorkLoadInDays + ProjectManagementWorkLoadInDays).ToString() + " days";
+        }
     }
 }

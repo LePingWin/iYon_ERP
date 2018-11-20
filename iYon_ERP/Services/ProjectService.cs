@@ -23,11 +23,6 @@ namespace iYon_ERP.Services
             return Projects.Where(x => x.Id == id).FirstOrDefault();
         }
 
-        public List<Project> GetEmployeeProjects(Employee emp)
-        {
-            return Projects.Where(x => x.Employees.Contains(emp)).ToList();
-        }
-
         public void AssignEmployeeToProject(Employee emp, Project p)
         {
             p.AssignEmployee(emp);
@@ -38,6 +33,14 @@ namespace iYon_ERP.Services
             p.UnAssignEmployee(emp);
         }
 
-        //TODO : Fonction qui calcul si un projet dispose de toutes les ressources nécessaires
+        //public bool IsProjectDevelopmentWorkloadSupported(Project p)
+        //{
+        //    p.DevWorkLoadInDays
+        //}
+        public Project GetOneById(int id)
+        {
+            return Projects.Where(e => e.Id == id).FirstOrDefault();
+        }
+
     }
 }
