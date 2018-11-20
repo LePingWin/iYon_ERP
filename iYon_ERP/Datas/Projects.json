@@ -20,5 +20,12 @@
         "Deadline": "2019-01-01T18:00:00.000Z",
         "DevWorkLoadInDays": "150",
         "ProjectManagementWorkLoadInDays": "45"
+      },
+	  {
+        "Id": "4",
+        "Name": "SONI",
+        "Deadline": "2019-01-01T18:00:00.000Z",
+        "DevWorkLoadInDays": "300",
+        "ProjectManagementWorkLoadInDays": "80"
       }
     ]
