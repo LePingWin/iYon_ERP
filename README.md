@@ -8,3 +8,4 @@ On dispose de 4 personnes : 1 Chefs de Projets et 3 Développeurs
 - 2 rôles : Chef de Projet ou Développeur. Les rôles ne sont pas cumulables 
 - La priorité est de terminer les projets dont la date de fin est la plus proche de la date de début de simulation
 - Employé utilisable au bout de 4 mois après l'embauche
+- Un employé lorsqu'il est affecté à un projet ne peut pas intervenir sur d'autres

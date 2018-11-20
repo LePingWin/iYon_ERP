@@ -19,6 +19,18 @@ namespace iYon_ERP.Models
         public int DevWorkLoadInDays { get; private set; }
         [JsonProperty("ProjectManagementWorkLoadInDays")]
         public int ProjectManagementWorkLoadInDays { get; private set; }
-        public Dictionary<Employee,int> EmployeeWorkloadDictionnary { get; private set; }
+
+        public List<Employee> Employees { get; private set; }
+
+        
+        public void AssignEmployee(Employee emp)
+        {
+            this.Employees.Add(emp);
+        }
+
+        public void UnAssignEmployee(Employee emp)
+        {
+            this.Employees.Remove(emp);
+        }
     }
 }
