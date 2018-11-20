@@ -37,6 +37,10 @@ namespace iYon_ERP.Services
         //{
         //    p.DevWorkLoadInDays
         //}
+        public Project GetOneById(int id)
+        {
+            return Projects.Where(e => e.Id == id).FirstOrDefault();
+        }
 
     }
 }
