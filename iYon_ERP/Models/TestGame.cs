@@ -18,7 +18,5 @@ namespace iYon_ERP.Models
         [JsonProperty("Projects")]
         public List<int> ProjectsID { get; private set; }
 
-        public List<Employee> listEmployee { get; set; }
-        public List<Project> listProject { get; set; }
     }
 }

@@ -21,7 +21,14 @@ namespace iYon_ERP.Models
         }
         [JsonProperty("Role")]
         public Type Role { get; private set; }
+
+        public override string ToString()
+        {
+            return "Name: " + Name + "| HireDate:" + HireDate + "| Role: " + Role.ToString();
+        }
     }
+
+   
 
     public enum Type
     {

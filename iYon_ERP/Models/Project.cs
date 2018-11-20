@@ -32,5 +32,10 @@ namespace iYon_ERP.Models
         {
             this.Employees.Remove(emp);
         }
+
+        public override string ToString()
+        {
+            return "Name: " + Name + "| Deadline:" + Deadline + "| TotalWorkLoad: " + (DevWorkLoadInDays + ProjectManagementWorkLoadInDays).ToString() + " days";
+        }
     }
 }

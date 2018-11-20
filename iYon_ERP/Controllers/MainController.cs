@@ -17,14 +17,18 @@ namespace iYon_ERP.Controllers
         private EmployeService _EmployeeService = new EmployeService();
         private ProjectService _ProjectService = new ProjectService();
 
-        private void getTestGame(int testGameId)
+        public MainViewModel GetTestGame(int testGameId)
         {
             TestGame testGame = _TestGameService.TestGames.Where(tg => tg.Id == testGameId).FirstOrDefault();
-            List<Employee> testGameEmployes = new List<Employee>();
-            testGame.EmployeesID.ForEach(id => testGameEmployes.Add(_EmployeeService.GetOneById(id)));
+            MainViewModel mainVM = new MainViewModel();
 
-            List<Project> testGameProjects = new List<Project>();
-            testGame.ProjectsID.ForEach(id => testGameProjects.Add(_ProjectService.GetOneById(id)));
+            mainVM.listEmployee = new List<Employee>();
+            testGame.EmployeesID.ForEach(id => mainVM.listEmployee.Add(_EmployeeService.GetOneById(id)));
+
+            mainVM.listProject = new List<Project>();
+            testGame.ProjectsID.ForEach(id => mainVM.listProject.Add(_ProjectService.GetOneById(id)));
+
+            return mainVM;
         }
     }
 }
