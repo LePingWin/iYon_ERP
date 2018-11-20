@@ -18,11 +18,6 @@ namespace iYon_ERP.Services
             return Projects.Where(x => x.Name == name).FirstOrDefault();
         }
 
-        public Project GetProjectByID(int id)
-        {
-            return Projects.Where(x => x.Id == id).FirstOrDefault();
-        }
-
         public void AssignEmployeeToProject(Employee emp, Project p)
         {
             p.AssignEmployee(emp);
@@ -33,11 +28,7 @@ namespace iYon_ERP.Services
             p.UnAssignEmployee(emp);
         }
 
-        //public bool IsProjectDevelopmentWorkloadSupported(Project p)
-        //{
-        //    p.DevWorkLoadInDays
-        //}
-        public Project GetOneById(int id)
+        public Project GetProjectByID(int id)
         {
             return Projects.Where(e => e.Id == id).FirstOrDefault();
         }

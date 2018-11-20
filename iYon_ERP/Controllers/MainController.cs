@@ -23,10 +23,10 @@ namespace iYon_ERP.Controllers
             MainViewModel mainVM = new MainViewModel();
 
             mainVM.listEmployee = new List<Employee>();
-            testGame.EmployeesID.ForEach(id => mainVM.listEmployee.Add(_EmployeeService.GetOneById(id)));
+            testGame.EmployeesID.ForEach(id => mainVM.listEmployee.Add(_EmployeeService.GetEmployeeByID(id)));
 
             mainVM.listProject = new List<Project>();
-            testGame.ProjectsID.ForEach(id => mainVM.listProject.Add(_ProjectService.GetOneById(id)));
+            testGame.ProjectsID.ForEach(id => mainVM.listProject.Add(_ProjectService.GetProjectByID(id)));
 
             return mainVM;
         }

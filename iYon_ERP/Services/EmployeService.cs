@@ -23,7 +23,7 @@ namespace iYon_ERP.Services
             return DateTime.Compare(currentDate,operationalDate) < 0 ? false : true;
         }
 
-        public Employee GetOneById(int id)
+        public Employee GetEmployeeByID(int id)
         {
             return Employees.Where(e => e.Id == id).FirstOrDefault();
         }
