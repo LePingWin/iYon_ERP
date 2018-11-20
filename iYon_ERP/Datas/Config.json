@@ -1,0 +1,23 @@
+//JSON Project
+{
+	"Config":[
+		{ 
+			"Id" : "1",
+			"Efficience" : "100"
+		},
+
+		{ 
+			"Id" : "2",
+			"Efficience" : "80"
+		},
+		{ 
+			"Id" : "3",
+			"Efficience" : "120"
+		},
+	]
+}
+
+
+
+
+    
