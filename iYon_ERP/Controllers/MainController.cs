@@ -68,7 +68,7 @@ namespace iYon_ERP.Controllers
         {
             var res = "";
             int i = 1;
-            GetProjectListOrderByShortestLength(model).ForEach(projectW =>
+            GetProjectListOrderByDeadline(model).ForEach(projectW =>
             {
 
                 SetCurrentDevTime(model, CalculateProjectWorkDaysForDevs(model, projectW.project) - i);
@@ -83,9 +83,9 @@ namespace iYon_ERP.Controllers
             return res;
         }
 
-        private static List<ProjectWrapper> GetProjectListOrderByShortestLength(MainViewModel model)
+        private static List<ProjectWrapper> GetProjectListOrderByDeadline(MainViewModel model)
         {
-            return model.listProject.OrderBy(projectW => projectW.GetProjectBiggestWorkLoad()).ToList();
+            return model.listProject.OrderBy(projectW => projectW.project.Deadline).ToList();
         }
 
 
