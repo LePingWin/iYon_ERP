@@ -23,5 +23,11 @@
         "Name" : "Loic Bine",
         "HireDate" : "2018-01-01T18:00:00.000Z",
         "Role" : "ProjectManager"
+       },
+	    {
+        "Id" : "5",
+        "Name" : "Roberto Alfresco",
+        "HireDate" : "2018-06-01T18:00:00.000Z",
+        "Role" : "Developer"
        }
  ]
