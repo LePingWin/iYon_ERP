@@ -32,5 +32,16 @@ namespace iYon_ERP.Models
         {
             this.Employees.Remove(emp);
         }
+
+        public int GetWorkLoad(Models.Type workLoadtype)
+        {
+            return workLoadtype == Models.Type.Developer ? DevWorkLoadInDays : ProjectManagementWorkLoadInDays;
+        }
+
+
+        public override string ToString()
+        {
+            return "Name: " + Name + "| Deadline:" + Deadline + "| TotalWorkLoad: " + (DevWorkLoadInDays + ProjectManagementWorkLoadInDays).ToString() + " days";
+        }
     }
 }
