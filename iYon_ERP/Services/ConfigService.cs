@@ -13,7 +13,7 @@ namespace iYon_ERP.Services
         private static ConfigRepository ConfigRepo = new ConfigRepository();
         public List<Config> Configs { get { return ConfigRepo.GetAllItems(); } }
 
-        public int getEfficiencyRealTime(int workload, int efficiency)
+        public float getEfficiencyRealTime(int workload, int efficiency)
         {
             return workload / efficiency;
         }

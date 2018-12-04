@@ -13,10 +13,7 @@ namespace iYon_ERP.Services
         private static EmployeRepository EmployeeRepo = new EmployeRepository();
         public List<Employee> Employees { get { return EmployeeRepo.GetAllItems(); } }
 
-        public int GetEfficiencyRealTime(int workload, int efficiency)
-        {
-            return workload / efficiency;
-        }
+
 
         public bool IsEmployeeOperational(DateTime currentDate, DateTime operationalDate)
         {
@@ -27,6 +24,7 @@ namespace iYon_ERP.Services
         {
             return Employees.Where(e => e.Id == id).FirstOrDefault();
         }
+
         //AddEmployee
         //call employee repo
     }

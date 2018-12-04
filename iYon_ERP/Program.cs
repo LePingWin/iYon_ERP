@@ -15,18 +15,32 @@ namespace iYon_ERP
         static void Main(string[] args)
         {
             MainController _MainController = new MainController();
-            MainViewModel mainVM = _MainController.GetTestGame(3);
-
-            Console.WriteLine("------ INIT -----");
-            Console.WriteLine("DaysBeforeEmployeeOperational : " + AppConfig.DaysBeforeEmployeeOperational.ToString());
-            Console.WriteLine("Efficience : " + AppConfig.Efficience.ToString());
-            Console.WriteLine("SimulationFilesPath : " + AppConfig.SimulationFilesPath.ToString());
-            Console.WriteLine("StartSimulationDate : " + AppConfig.StartSimulationDate.ToString());
-            Console.WriteLine("------ Employees -----");
-            mainVM.listEmployee.ForEach(e => Console.WriteLine(e.ToString()));
-            Console.WriteLine("------ Projects -----");
-            mainVM.listProject.ForEach(p => Console.WriteLine(p.ToString()));
+            var testGameList = _MainController.GetAllTestGame();
+            Console.WriteLine("------ I'm going for an adventuuuuuuure -----");
+            Console.WriteLine("-- Push a key to begin your trip.");
             Console.ReadLine();
+            Console.Clear();
+
+            testGameList.ForEach(testGame =>
+            {
+                Console.WriteLine("------ INIT -----");
+                Console.WriteLine("DaysBeforeEmployeeOperational : " + AppConfig.DaysBeforeEmployeeOperational.ToString());
+                Console.WriteLine("SimulationFilesPath : " + AppConfig.SimulationFilesPath.ToString());
+                Console.WriteLine("StartSimulationDate : " + AppConfig.StartSimulationDate.ToString());
+
+                MainViewModel mainVM = _MainController.GetTestGame(testGame.Id);
+                Console.WriteLine("\n------ Employees -----");
+                mainVM.listEmployee.ForEach(e => Console.WriteLine(e.ToString()));
+                Console.WriteLine("\n------ Projects -----");
+                mainVM.listProject.ForEach(p => Console.WriteLine(p.project.ToString()));
+
+                Console.WriteLine("\n----- Results Jeu d'essai " + testGame.Id + "/" + testGameList.Count + " ------");
+                Console.WriteLine(_MainController.GetProjectsEnd(mainVM));
+                Console.ReadLine();
+                Console.Clear();
+            });
+            
+
         }
     }
 }

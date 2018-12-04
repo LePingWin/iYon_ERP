@@ -12,6 +12,6 @@ namespace iYon_ERP.Models
         [JsonProperty("Id")]
         public int Id { get; private set; }
         [JsonProperty("Efficience")]
-        public double Efficience { get; private set; }
+        public float Efficience { get; private set; }
     }
 }

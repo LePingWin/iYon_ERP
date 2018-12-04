@@ -28,6 +28,11 @@ namespace iYon_ERP.Models
             this.Employees.Add(emp);
         }
 
+        public void AssignAllEmployee(List<Employee> listEmp)
+        {
+            this.Employees = listEmp;
+        }
+
         public void UnAssignEmployee(Employee emp)
         {
             this.Employees.Remove(emp);

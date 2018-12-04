@@ -10,3 +10,4 @@ On dispose de 4 personnes : 1 Chefs de Projets et 3 Développeurs
 - Employé utilisable au bout de 4 mois après l'embauche
 - Les ressources sont interchangeables
 - Les projets se suivent
+- Un jour entammé est un jour complet consommé

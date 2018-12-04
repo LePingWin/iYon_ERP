@@ -11,6 +11,8 @@ namespace iYon_ERP.Services
     public class ProjectService
     {
         private static ProjectRepository ProjectRepo = new ProjectRepository();
+        private static ConfigRepository ConfigRepo = new ConfigRepository();
+
         public List<Project> Projects { get { return ProjectRepo.GetAllItems(); } }
 
         public Project GetProjectByName(string name)
@@ -23,6 +25,11 @@ namespace iYon_ERP.Services
             p.AssignEmployee(emp);
         }
 
+        public void AssignAllEmployeeToProject(List<Employee> listEmp, Project p)
+        {
+            p.AssignAllEmployee(listEmp);
+        }
+
         public void UnAsssignEmployeeToProject(Employee emp, Project p)
         {
             p.UnAssignEmployee(emp);
@@ -33,5 +40,32 @@ namespace iYon_ERP.Services
             return Projects.Where(e => e.Id == id).FirstOrDefault();
         }
 
+        public float GetEffectiveWorkTimeOnProject(Project project, Models.Type workLoadType, float efficiency)
+        {
+            return GetEfficiencyRealTime(project.GetWorkLoad(workLoadType) / project.Employees.Where(emp => emp.Role == workLoadType).Count(), efficiency);    
+        }
+
+        private float GetEfficiencyRealTime(int workload, float efficiency)
+        {
+            return workload / efficiency;
+        }
+
+
+        public DateTime AddWorkTime(float workload, DateTime startProject)
+        {
+
+            DateTime currentTime = startProject;
+            for (int i = 0; i < workload; i++)
+            {
+                currentTime = currentTime.AddDays(1);
+
+                if (currentTime.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    currentTime = currentTime.AddDays(2);
+                }
+            }
+
+            return currentTime;
+        }
     }
 }

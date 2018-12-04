@@ -12,7 +12,7 @@ namespace iYon_ERP.Models
         [JsonProperty("Id")]
         public int Id { get; private set; }
         [JsonProperty("Config")]
-        public int Name { get; private set; }
+        public int ConfigID { get; private set; }
         [JsonProperty("Employees")]
         public List<int> EmployeesID { get; private set; }
         [JsonProperty("Projects")]

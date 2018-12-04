@@ -1,21 +1,19 @@
 //JSON Project
-{
-	"Config":[
-		{ 
-			"Id" : "1",
-			"Efficience" : "1"
-		},
+[
+	{ 
+		"Id" : "1",
+		"Efficience" : "1"
+	},
 
-		{ 
-			"Id" : "2",
-			"Efficience" : "0.8"
-		},
-		{ 
-			"Id" : "3",
-			"Efficience" : "1.2"
-		},
-	]
-}
+	{ 
+		"Id" : "2",
+		"Efficience" : "0.8"
+	},
+	{ 
+		"Id" : "3",
+		"Efficience" : "1.2"
+	}
+]
 
 
 
