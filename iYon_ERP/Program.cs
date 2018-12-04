@@ -23,12 +23,14 @@ namespace iYon_ERP
 
             testGameList.ForEach(testGame =>
             {
+                MainViewModel mainVM = _MainController.GetTestGame(testGame.Id);
+
                 Console.WriteLine("------ INIT -----");
                 Console.WriteLine("DaysBeforeEmployeeOperational : " + AppConfig.DaysBeforeEmployeeOperational.ToString());
                 Console.WriteLine("SimulationFilesPath : " + AppConfig.SimulationFilesPath.ToString());
                 Console.WriteLine("StartSimulationDate : " + AppConfig.StartSimulationDate.ToString());
+                Console.WriteLine("Efficiency : " + mainVM.config.ToString());
 
-                MainViewModel mainVM = _MainController.GetTestGame(testGame.Id);
                 Console.WriteLine("\n------ Employees -----");
                 mainVM.listEmployee.ForEach(e => Console.WriteLine(e.ToString()));
                 Console.WriteLine("\n------ Projects -----");

@@ -13,5 +13,10 @@ namespace iYon_ERP.Models
         public int Id { get; private set; }
         [JsonProperty("Efficience")]
         public float Efficience { get; private set; }
+
+        public override string ToString()
+        {
+            return Efficience * 100 + "%";
+        }
     }
 }
