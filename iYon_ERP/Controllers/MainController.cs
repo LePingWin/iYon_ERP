@@ -66,18 +66,27 @@ namespace iYon_ERP.Controllers
 
         public string GetProjectsEnd(MainViewModel model)
         {
-            var res = "";
+            var endResult = "OK !";
             int i = 1;
             DateTime nextProjectStartDate = AppConfig.StartSimulationDate;
             GetProjectListOrderByDeadline(model).ForEach(projectW =>
             {
                 CalculateProjectEnd(nextProjectStartDate,model, projectW, i);
                 nextProjectStartDate = projectW.GetProjectEndDate;
-                res += projectW.ToString();
                 i = 0;
-            });
+                if (projectW.GetProjectEndDate < projectW.project.Deadline)
+                    Console.ForegroundColor = ConsoleColor.Green;
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    endResult = "NOK !";
+                }
 
-            return res;
+                Console.WriteLine(projectW.ToString());
+
+            });
+            Console.ResetColor();
+            return endResult;
         }
 
         private void CalculateProjectEnd(DateTime projectStartDate,MainViewModel model, ProjectWrapper projectW, int i)

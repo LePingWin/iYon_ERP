@@ -15,14 +15,14 @@ namespace iYon_ERP.Models
         public DateTime GetProjectEndDate {
             get
             {
-                return DevsEndDate <= ProjectManagementEndDate ? DevsEndDate : ProjectManagementEndDate;
+                return DevsEndDate <= ProjectManagementEndDate ?   ProjectManagementEndDate : DevsEndDate;
             }
         }
 
         public override string ToString()
         {
             return "Project : " + project.Name + " | ProjectEnd : " + GetProjectEndDate.ToShortDateString()
-                + "\nDetailled -- DevsTimeEnd : " + DevsEndDate.ToShortDateString() + " | ProjectManagementEnd : " + ProjectManagementEndDate.ToShortDateString() + "\n\n";
+                + "\nDetailled -- DevsTimeEnd : " + DevsEndDate.ToShortDateString() + " | ProjectManagementEnd : " + ProjectManagementEndDate.ToShortDateString() + "\n";
         }
 
         public ProjectWrapper(Project project)
