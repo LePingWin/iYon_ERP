@@ -43,14 +43,14 @@ namespace iYon_ERP.Controllers
             return _TestGameService.TestGames;
         }
 
-        public float CalculateProjectWorkDaysForDevs(MainViewModel model, Project project)
+        public float CalculateProjectWorkDaysForDevs(DateTime projectStartDate,MainViewModel model, Project project)
         {
-                return _ProjectService.GetEffectiveWorkTimeOnProject(project, Models.Type.Developer, model.config.Efficience);
+                return _ProjectService.GetEffectiveWorkTimeOnProject(projectStartDate,project, Models.Type.Developer, model.config.Efficience);
         }
 
-        public float CalculateProjectWorkDaysForProjectManagement(MainViewModel model, Project project)
+        public float CalculateProjectWorkDaysForProjectManagement(DateTime projectStartDate,MainViewModel model, Project project)
         {
-            return _ProjectService.GetEffectiveWorkTimeOnProject(project, Models.Type.ProjectManager, model.config.Efficience);
+            return _ProjectService.GetEffectiveWorkTimeOnProject(projectStartDate, project, Models.Type.ProjectManager, model.config.Efficience);
         }
 
         //Gerer les week ends
@@ -68,19 +68,24 @@ namespace iYon_ERP.Controllers
         {
             var res = "";
             int i = 1;
+            DateTime nextProjectStartDate = AppConfig.StartSimulationDate;
             GetProjectListOrderByDeadline(model).ForEach(projectW =>
             {
-
-                SetCurrentDevTime(model, CalculateProjectWorkDaysForDevs(model, projectW.project) - i);
-                SetCurrentProjectManagementTime(model, CalculateProjectWorkDaysForProjectManagement(model, projectW.project) - i);
-                projectW.DevsEndDate = model.CurrentDevDay;
-                projectW.ProjectManagementEndDate = model.CurrentProjectManagementDay;
-
+                CalculateProjectEnd(nextProjectStartDate,model, projectW, i);
+                nextProjectStartDate = projectW.GetProjectEndDate;
                 res += projectW.ToString();
-                i  = 0;
+                i = 0;
             });
 
             return res;
+        }
+
+        private void CalculateProjectEnd(DateTime projectStartDate,MainViewModel model, ProjectWrapper projectW, int i)
+        {
+            SetCurrentDevTime(model, CalculateProjectWorkDaysForDevs(projectStartDate,model, projectW.project) - i);
+            SetCurrentProjectManagementTime(model, CalculateProjectWorkDaysForProjectManagement(projectStartDate,model, projectW.project) - i);
+            projectW.DevsEndDate = model.CurrentDevDay;
+            projectW.ProjectManagementEndDate = model.CurrentProjectManagementDay;
         }
 
         private static List<ProjectWrapper> GetProjectListOrderByDeadline(MainViewModel model)

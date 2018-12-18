@@ -40,9 +40,9 @@ namespace iYon_ERP.Services
             return Projects.Where(e => e.Id == id).FirstOrDefault();
         }
 
-        public float GetEffectiveWorkTimeOnProject(Project project, Models.Type workLoadType, float efficiency)
+        public float GetEffectiveWorkTimeOnProject(DateTime projectStartDate,Project project, Models.Type workLoadType, float efficiency)
         {
-            return GetEfficiencyRealTime(project.GetWorkLoad(workLoadType) / project.Employees.Where(emp => emp.Role == workLoadType).Count(), efficiency);    
+            return GetEfficiencyRealTime(project.GetWorkLoad(workLoadType) / project.Employees.Where(emp => emp.IsOperational(projectStartDate) && emp.Role == workLoadType).Count(), efficiency);    
         }
 
         private float GetEfficiencyRealTime(int workload, float efficiency)

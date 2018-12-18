@@ -26,9 +26,15 @@ namespace iYon_ERP.Models
         {
             return "Name: " + Name + "| HireDate:" + HireDate + "| Role: " + Role.ToString();
         }
+
+        public bool IsOperational(DateTime currentDate)
+        {
+            return DateTime.Compare(currentDate, this.OperationalDate) < 0 ? false : true;
+        }
     }
 
-   
+
+
 
     public enum Type
     {
