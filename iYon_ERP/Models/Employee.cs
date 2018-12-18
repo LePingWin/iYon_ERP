@@ -24,7 +24,7 @@ namespace iYon_ERP.Models
 
         public override string ToString()
         {
-            return "Name: " + Name + "| HireDate:" + HireDate + "| Role: " + Role.ToString();
+            return "Name: " + Name + "| HireDate: " + HireDate.ToShortDateString() + " | Role: " + Role.ToString();
         }
 
         public bool IsOperational(DateTime currentDate)

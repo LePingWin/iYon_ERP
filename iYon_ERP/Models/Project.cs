@@ -46,7 +46,7 @@ namespace iYon_ERP.Models
 
         public override string ToString()
         {
-            return "Name: " + Name + "| Deadline:" + Deadline + "| TotalWorkLoad: " + (DevWorkLoadInDays + ProjectManagementWorkLoadInDays).ToString() + " days";
+            return "Name: " + Name + "| Deadline:" + Deadline + " | TotalWorkLoad: " + (DevWorkLoadInDays + ProjectManagementWorkLoadInDays).ToString() + " days";
         }
     }
 }
