@@ -17,7 +17,7 @@ namespace iYon_ERP
             MainController _MainController = new MainController();
             var testGameList = _MainController.GetAllTestGame();
             Console.WriteLine("------ I'm going for an adventuuuuuuure -----");
-            Console.WriteLine("-- Push a key to begin your trip.");
+            Console.WriteLine("Push a key to begin your trip.");
             Console.ReadLine();
             Console.Clear();
 
@@ -36,7 +36,7 @@ namespace iYon_ERP
                 Console.WriteLine("\n------ Projects -----");
                 mainVM.listProject.ForEach(p => Console.WriteLine(p.project.ToString()));
 
-                Console.WriteLine("\n----- Results Jeu d'essai " + testGame.Id + "/" + testGameList.Count + " ------");
+                Console.WriteLine("\n----- Results TestGame " + testGame.Id + "/" + testGameList.Count + " ------");
                 Console.WriteLine(_MainController.GetProjectsEnd(mainVM));
                 Console.ReadLine();
                 Console.Clear();

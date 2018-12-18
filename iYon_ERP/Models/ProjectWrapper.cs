@@ -21,7 +21,8 @@ namespace iYon_ERP.Models
 
         public override string ToString()
         {
-            return "Project : " + project.Name + " | DevsTimeEnd : " + DevsEndDate.ToShortDateString() + " | ProjectManagementEnd : " + ProjectManagementEndDate.ToShortDateString() + "\n";
+            return "Project : " + project.Name + " | ProjectEnd : " + GetProjectEndDate.ToShortDateString()
+                + "\nDetailled -- DevsTimeEnd : " + DevsEndDate.ToShortDateString() + " | ProjectManagementEnd : " + ProjectManagementEndDate.ToShortDateString() + "\n\n";
         }
 
         public ProjectWrapper(Project project)

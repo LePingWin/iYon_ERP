@@ -89,13 +89,6 @@ namespace iYon_ERP.Controllers
         }
 
 
-
-
-
-
-
-
-
         //Méthode : On affecte tout le monde au même projet, on vérifie la date de fin de chaque tâche (ici dev et pilotage). 
         //La date la plus tardive représente la fin du projet. 
         //L'autre date indique qu'on peut affecter un développeur à un projet à une certaine date
