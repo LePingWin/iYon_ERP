@@ -4,27 +4,33 @@
 Afin d'éxecuter le programme il faut double cliquer sur l'executable iYon_ERP.exe (application console). Par passer d'un jeu de test à un autre il suffira d'appuyer une touche du clavier.
 L'application affichera un resultat du type :
 
-```------ INIT -----
+```
+------ INIT -----
 DaysBeforeEmployeeOperational : 00:00:00.0000120
 SimulationFilesPath : .\..\..\Datas
 StartSimulationDate : 01/06/2018 00:00:00
 Efficiency : 100%
 
 ------ Employees -----
-Name: Laurent Freyss| HireDate:01/01/2018 18:00:00| Role: Developer
-Name: Jean Still| HireDate:01/01/2018 18:00:00| Role: Developer
-Name: Julien Groll| HireDate:01/01/2018 18:00:00| Role: Developer
-Name: Loic Bine| HireDate:01/01/2018 18:00:00| Role: ProjectManager
+Name: Laurent Freyss| HireDate: 01/01/2018 | Role: Developer
+Name: Jean Still| HireDate: 01/01/2018 | Role: Developer
+Name: Julien Groll| HireDate: 01/01/2018 | Role: Developer
+Name: Loic Bine| HireDate: 01/01/2018 | Role: ProjectManager
 
 ------ Projects -----
-Name: Airbus| Deadline:01/12/2018 18:00:00| TotalWorkLoad: 190 days
-Name: NINETENDO| Deadline:01/09/2018 18:00:00| TotalWorkLoad: 100 days
-Name: HTC VR| Deadline:01/01/2019 18:00:00| TotalWorkLoad: 195 days
+Name: Airbus| Deadline:01/12/2018 18:00:00 | TotalWorkLoad: 190 days
+Name: NINETENDO| Deadline:01/09/2018 18:00:00 | TotalWorkLoad: 100 days
+Name: HTC VR| Deadline:01/01/2019 18:00:00 | TotalWorkLoad: 195 days
 
------ Results Jeu d'essai 1/4 ------
-Project : NINETENDO | DevsTimeEnd : 05/07/2018 | ProjectManagementEnd : 05/07/2018
-Project : Airbus | DevsTimeEnd : 13/09/2018 | ProjectManagementEnd : 30/08/2018
-Project : HTC VR | DevsTimeEnd : 22/11/2018 | ProjectManagementEnd : 01/11/2018
+----- Results TestGame 1/4 ------
+Project : NINETENDO | ProjectEnd : 05/07/2018
+Detailled -- DevsTimeEnd : 05/07/2018 | ProjectManagementEnd : 05/07/2018
+
+Project : Airbus | ProjectEnd : 30/08/2018
+Detailled -- DevsTimeEnd : 13/09/2018 | ProjectManagementEnd : 30/08/2018
+
+Project : HTC VR | ProjectEnd : 01/11/2018
+Detailled -- DevsTimeEnd : 22/11/2018 | ProjectManagementEnd : 01/11/2018
 ```
 
 ### Hypothèses
