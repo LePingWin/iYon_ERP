@@ -38,6 +38,7 @@ On dispose de 4 personnes : 1 Chefs de Projets et 3 Développeurs
 - Les ressources sont interchangeables
 - Les projets se suivent
 - Un jour entammé est un jour complet consommé
+- Si un employé devient opérationel lors d'un projet en cours il n'interviendra que sur le projet suivant (les jours entre le moment ou l'employé est opérationel et la fin du projet sont perdus) 
 
 ### Jeux de test 
 Pour réaliser nos jeux de tests nous utilisons des fichiers json. Ce sont donc ces derniers à modifier pour changer le deroulement des jeux de tests de l'ERP.
