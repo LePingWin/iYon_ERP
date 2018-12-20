@@ -34,7 +34,7 @@ namespace iYon_ERP
                 Console.WriteLine("\n------ Employees -----");
                 mainVM.listEmployee.ForEach(e => Console.WriteLine(e.ToString()));
                 Console.WriteLine("\n------ Projects -----");
-                mainVM.listProject.ForEach(p => Console.WriteLine(p.project.ToString()));
+                mainVM.listProject.ForEach(p => Console.WriteLine(p.project.ToString() + " | TotalWorkLoadEfficiency: "+ Math.Ceiling((p.project.ProjectManagementWorkLoadInDays + p.project.DevWorkLoadInDays) / mainVM.config.Efficience)));
 
                 Console.WriteLine("\n----- Results TestGame " + testGame.Id + "/" + testGameList.Count + " ------");
                 Console.WriteLine(_MainController.GetProjectsEnd(mainVM));
