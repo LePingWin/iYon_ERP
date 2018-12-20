@@ -68,7 +68,9 @@ Pour arriver à finir dans les temps tous les projets il faut embaucher des pers
 
 #### Question E
 Pour répondre à cette question nous avons eu deux version, la première : Si un employé devient opérationel lors d'un projet en cours il n'interviendra que sur le projet suivant (les jours entre le moment ou l'employé est opérationel et la fin du projet sont perdus)
-Il aurait fallu embaucher trois développeurs et un chef de projet pour répondre à la deadline.
+Il aurait fallu embaucher :
+- Trois développeurs
+- Un chef de projet
 
 Pour la deuxième version plus "logique" : Quand un employé devient opérationnel au plein milieu d'un projet, il est alors affecté directement au projet en cours.
 Il faudra donc dans ce cas embaucher :
