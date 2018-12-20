@@ -42,7 +42,21 @@ namespace iYon_ERP.Services
 
         public float GetEffectiveWorkTimeOnProject(DateTime projectStartDate,Project project, Models.Type workLoadType, float efficiency)
         {
-            return GetEfficiencyRealTime(project.GetWorkLoad(workLoadType) / project.Employees.Where(emp => emp.IsOperational(projectStartDate) && emp.Role == workLoadType).Count(), efficiency);    
+            float effectiveTime = 0;
+            if(project.Employees.Any(emp => !emp.IsOperational(projectStartDate)))
+            {
+
+                var dividedSegment = DivideWorkLoad(project.Employees.Where(emp => emp.Role == workLoadType).ToList(), projectStartDate, project.GetWorkLoad(workLoadType));
+                dividedSegment.ForEach(seg =>
+                {
+                    effectiveTime += GetEfficiencyRealTime(seg.nbDays / seg.nbEmployees, efficiency);
+                });
+            }
+            else
+
+                effectiveTime = GetEfficiencyRealTime(project.GetWorkLoad(workLoadType) / project.Employees.Where(emp => emp.Role == workLoadType).Count(), efficiency);
+
+            return effectiveTime;
         }
 
         private float GetEfficiencyRealTime(int workload, float efficiency)
@@ -50,6 +64,25 @@ namespace iYon_ERP.Services
             return workload / efficiency;
         }
 
+        private List<(int nbDays,int nbEmployees)> DivideWorkLoad(List<Employee> employees, DateTime startProjectDate, int workLoadTotal)
+        {
+            var startSegmentDays = 0;
+            var numberOperationEmployee = employees.Where(emp => emp.IsOperational(startProjectDate)).Count();
+            var workLoadSegments = new List<(int nbDays, int nbEmployees)> ();
+            int intervalDays = 0;
+            employees.OrderBy(emp => emp.OperationalDate).Where(emp => !emp.IsOperational(startProjectDate) && (emp.OperationalDate - startProjectDate).Days < (workLoadTotal / numberOperationEmployee)).ToList().ForEach(emp =>
+            {
+                intervalDays = (emp.OperationalDate - startProjectDate).Days - startSegmentDays;
+                workLoadSegments.Add((intervalDays, numberOperationEmployee));
+                numberOperationEmployee++;
+                startSegmentDays = intervalDays != 0 ? intervalDays : startSegmentDays;
+            });
+
+            intervalDays = workLoadTotal - startSegmentDays;
+            workLoadSegments.Add((intervalDays, numberOperationEmployee));
+
+            return workLoadSegments;
+        }
 
         public DateTime AddWorkTime(float workload, DateTime startProject)
         {

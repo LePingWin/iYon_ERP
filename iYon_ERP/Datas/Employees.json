@@ -41,11 +41,5 @@
         "Name" : "Mad Max",
         "HireDate" : "2018-06-01T18:00:00.000Z",
         "Role" : "ProjectManager"
-       },
-	   {
-        "Id" : "8",
-        "Name" : "Patrick l'Etoile",
-        "HireDate" : "2018-06-01T18:00:00.000Z",
-        "Role" : "Developer"
        }
  ]
